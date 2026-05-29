@@ -199,7 +199,7 @@
     }
     
     .card-a .moat-card-label { color: var(--accent); }
-    .card-b .moat-card-label { color: var(--grey-mid); }
+    .card-b .moat-card-label { color: #111111; }
     
     .moat-card p {
       margin-bottom: 40px;
@@ -226,8 +226,8 @@
     }
     
     .outline-tag.grey-tag {
-      color: var(--grey-mid);
-      border-color: var(--grey-mid);
+      color: #111111;
+      border-color: #111111;
     }
     
     /* SECTION 4: THREAT VISUALIZATION */
@@ -252,7 +252,7 @@
     }
     
     .label-safe { color: var(--accent); }
-    .label-threatened { color: var(--grey-mid); }
+    .label-threatened { color: #111111; }
     
     .scale-track {
       position: relative;
@@ -273,13 +273,13 @@
     }
     
     .scale-dot.dot-a {
-      left: 30%;
+      left: 25%;
       background: var(--accent);
     }
     
     .scale-dot.dot-b {
       left: 75%;
-      background: var(--grey-mid);
+      background: #111111;
     }
     
     .dot-caption {
@@ -329,6 +329,10 @@
       border-left-color: var(--accent);
     }
     
+    .timeline-col.col-b {
+      border-left-color: #111111;
+    }
+    
     .timeline-item {
       position: relative;
       margin-bottom: 56px;
@@ -343,7 +347,7 @@
       height: 11px;
       border-radius: 50%;
       background: #ffffff;
-      border: 3px solid var(--grey-mid);
+      border: 3px solid #111111;
       z-index: 2;
     }
     
@@ -372,11 +376,12 @@
     }
     
     .timeline-note {
-      grid-column: 2;
+      grid-column: 1 / span 2;
       font-size: 0.85rem;
-      font-style: italic;
       color: var(--grey-mid);
-      margin-top: -20px;
+      margin-top: 0;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
     }
     
     /* SECTION 6: ALIGNMENT TABLE */
@@ -402,7 +407,7 @@
     }
     
     table.adv-table th.th-a { color: var(--accent); }
-    table.adv-table th.th-b { color: var(--grey-mid); }
+    table.adv-table th.th-b { color: #111111; }
     
     .adv-yes {
       color: #111111;
@@ -513,8 +518,8 @@
   <!-- SECTION 2: NUMBERS AT A GLANCE -->
   <section id="numbers">
     <div class="container animate-trigger">
-      <span class="section-label anim-el">01 / Scorecard</span>
-      <h2 class="display-medium anim-el">The Numbers at a Glance</h2>
+      <span class="section-label anim-el">01 / Strategic Trade-offs</span>
+      <h2 class="display-medium anim-el">The Scorecard Comparison</h2>
       
       <div class="comparison-grid">
         <!-- Left Col: Hiring -->
@@ -523,42 +528,42 @@
           
           <div class="comparison-row">
             <span class="row-label">Market Size</span>
-            <span class="row-value">$700B+ hiring market</span>
+            <span class="row-value">$700B hiring market (Massive TAM)</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Path to first dollar</span>
-            <span class="row-value accent-val">Weeks (manual placements)</span>
+            <span class="row-value">Weeks (via manual concierge matching)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Launch & Density Risk</span>
+            <span class="row-value accent-val">High (Needs 1,000+ local profiles to work)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Regulatory Scrutiny</span>
+            <span class="row-value accent-val">High (NYC Local Law 144 audits)</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Revenue per transaction</span>
-            <span class="row-value accent-val">$7K–$16.5K per placement</span>
+            <span class="row-value">$7K–$16.5K placement fees</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Gross margin</span>
-            <span class="row-value">90%+ on placements</span>
+            <span class="row-value">90%+ on outcome placements</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Moat</span>
-            <span class="row-value">Strong, compounding trust graph</span>
-          </div>
-          
-          <div class="comparison-row">
-            <span class="row-label">Competitive window</span>
-            <span class="row-value">Multi-year (LinkedIn can't compete)</span>
-          </div>
-          
-          <div class="comparison-row">
-            <span class="row-label">Fundability</span>
-            <span class="row-value">High — pre-seed viable</span>
+            <span class="row-value">Compounding trust network effects</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Long-term ceiling</span>
-            <span class="row-value">$1B+ (LinkedIn replacement)</span>
+            <span class="row-value">$1B+ (Generational network)</span>
           </div>
         </div>
         
@@ -568,42 +573,42 @@
           
           <div class="comparison-row">
             <span class="row-label">Market Size</span>
-            <span class="row-value">Growing, hard to size</span>
+            <span class="row-value">Growing rapidly (scattered SMB automation)</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Path to first dollar</span>
-            <span class="row-value">Months (full build first)</span>
+            <span class="row-value">Immediate (sell B2B to client network today)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Launch & Density Risk</span>
+            <span class="row-value">Zero (single-user utility day one)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Regulatory Scrutiny</span>
+            <span class="row-value">Low (standard software liability terms)</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Revenue per transaction</span>
-            <span class="row-value">$200/month team plan</span>
+            <span class="row-value">$200/month recurring team plan</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Gross margin</span>
-            <span class="row-value">46–68% depending on tier</span>
+            <span class="row-value">46–68% typical (API fuel costs exposure)</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Moat</span>
-            <span class="row-value">Thin, open-source replicable</span>
-          </div>
-          
-          <div class="comparison-row">
-            <span class="row-label">Competitive window</span>
-            <span class="row-value">Narrowing fast</span>
-          </div>
-          
-          <div class="comparison-row">
-            <span class="row-label">Fundability</span>
-            <span class="row-value">Low — bootstrap only</span>
+            <span class="row-value">Onboarding UX and custom skill curated curation</span>
           </div>
           
           <div class="comparison-row">
             <span class="row-label">Long-term ceiling</span>
-            <span class="row-value">$1–5M ARR good business</span>
+            <span class="row-value">$1–5M ARR profitable bootstrapped business</span>
           </div>
         </div>
       </div>
@@ -613,15 +618,15 @@
   <!-- SECTION 3: THE MOAT EXPLAINED -->
   <section id="moats">
     <div class="container animate-trigger">
-      <span class="section-label anim-el">02 / Moat Assessment</span>
-      <h2 class="display-medium anim-el">Defensibility Models</h2>
+      <span class="section-label anim-el">02 / Moat vs. Execution speed</span>
+      <h2 class="display-medium anim-el">Core Value Engines</h2>
       
       <div class="moat-cards">
         <!-- Idea A Card -->
         <div class="moat-card card-a anim-el">
           <div>
-            <div class="moat-card-label">Compounding</div>
-            <p class="body-standard">Every verified profile, every placement, and every peer signal makes the dataset harder to replicate. Years of real human relationships cannot be scraped or bought overnight.</p>
+            <div class="moat-card-label">Compounding Moat</div>
+            <p class="body-standard">Every verified profile, successful placement, and peer trust signal increases the dataset's lock-in. A two-sided campus trust graph takes years of relationships to build and is highly defensible once established.</p>
           </div>
           <div class="tag-rack">
             <span class="outline-tag amber-tag">Network effects</span>
@@ -633,13 +638,13 @@
         <!-- Idea B Card -->
         <div class="moat-card card-b anim-el">
           <div>
-            <div class="moat-card-label">Replicable</div>
-            <p class="body-standard">The underlying tech stack—including NanoBot containers, Claude API integration, and Docker instances—is entirely open source. Any competent engineering team can copy this in weeks.</p>
+            <div class="moat-card-label">Execution Speed</div>
+            <p class="body-standard">Focuses on absolute utility from day one with zero network density dependencies. The infrastructure stack (NanoBot VMs) is technically open source, but offsets lock-in with warm B2B pipeline conversion.</p>
           </div>
           <div class="tag-rack">
-            <span class="outline-tag grey-tag">No network effects</span>
-            <span class="outline-tag grey-tag">Low switching cost</span>
-            <span class="outline-tag grey-tag">Big tech closing gap</span>
+            <span class="outline-tag grey-tag">Zero cold start</span>
+            <span class="outline-tag grey-tag">Immediate MRR</span>
+            <span class="outline-tag grey-tag">Lower execution friction</span>
           </div>
         </div>
       </div>
@@ -649,18 +654,18 @@
   <!-- SECTION 4: COMPETITIVE THREAT -->
   <section id="threats">
     <div class="container animate-trigger">
-      <span class="section-label anim-el">03 / Market Risk</span>
-      <h2 class="display-medium anim-el">Platform Exposure</h2>
+      <span class="section-label anim-el">03 / Risk Profiles</span>
+      <h2 class="display-medium anim-el">Strategic Risk Spectrum</h2>
       
       <div class="threat-wrapper anim-el">
         <div class="scale-labels">
-          <span class="scale-label label-safe">Safe</span>
-          <span class="scale-label label-threatened">Threatened</span>
+          <span class="scale-label label-safe">Venture Moonshot</span>
+          <span class="scale-label label-threatened">Bootstrapped SaaS</span>
         </div>
         <div class="scale-track">
           <!-- Dot A -->
           <div class="scale-dot dot-a">
-            <div class="dot-caption">Hiring Platform (30%)</div>
+            <div class="dot-caption">Hiring Platform (25%)</div>
           </div>
           <!-- Dot B -->
           <div class="scale-dot dot-b">
@@ -670,8 +675,8 @@
       </div>
       
       <div class="threat-desc-group anim-el">
-        <p><strong>LinkedIn structurally cannot compete.</strong> Auto-matching profiles directly would cannibalize 70% of their manual Recruiter seat and InMail search friction revenues, leaving a wide multi-year window for a new trust standard.</p>
-        <p><strong>OS-Native agent saturation is imminent.</strong> Apple, Google, OpenAI, and Anthropic are all shipping native screen and task automation agents. The competitive window for generic wrapper sandboxes is closing rapidly.</p>
+        <p><strong>Idea A requires solving a cold-start problem.</strong> It faces strict NYC/Colorado automated decision laws and transactional fee volatility. In exchange, it is highly fundable and structurally protected against LinkedIn (who cannot deploy auto-matching without cannibalizing 70% of search friction revenue).</p>
+        <p><strong>Idea B requires zero capital and provides predictable SaaS cash flow.</strong> It operates with minimal regulatory friction. In exchange, it faces platform risk as Apple, Google, and OpenAI deploy free, native task agents, requiring us to defend a narrow B2B vertical niche.</p>
       </div>
     </div>
   </section>
@@ -680,7 +685,7 @@
   <section id="timelines">
     <div class="container animate-trigger">
       <span class="section-label anim-el">04 / Roadmaps</span>
-      <h2 class="display-medium anim-el">The Realistic Build Order</h2>
+      <h2 class="display-medium anim-el">Staged Implementation Paths</h2>
       
       <div class="timelines-grid">
         <!-- Col A Timeline -->
@@ -689,22 +694,22 @@
           
           <div class="timeline-item">
             <h4>Weeks 1–4</h4>
-            <p>Both agents live on public data. Candidate profile mirrors scan portfolio signals. No users required on day one.</p>
+            <p>Develop conversational candidate profile builder. Agents scan public Vanderbilt career center feeds. No users required to deliver day one value.</p>
           </div>
           
           <div class="timeline-item">
             <h4>Weeks 5–8</h4>
-            <p>Manual concierge wedge. Founders manually match Vanderbilt students to warm employers. First placement fees collected.</p>
+            <p>Wizard of Oz concierge launch. Founders match Vanderbilt candidates to employers manually and collect first high-ticket placement fees.</p>
           </div>
           
           <div class="timeline-item">
             <h4>Weeks 9–12</h4>
-            <p>Build basic employer search dashboard. Launch natural language query matching and automated reference checks.</p>
+            <p>Deploy automated self-serve employer dashboard. Launch natural-language candidate searches and automated reference checking products.</p>
           </div>
           
           <div class="timeline-item">
             <h4>Months 3–6</h4>
-            <p>ATS integrations (Greenhouse, Ashby). Solidify P2P trust graph database and begin subscription models.</p>
+            <p>Integrate ATS APIs (Greenhouse, Ashby). Implement peer-to-peer trust graph ratings and transition transaction fees to SaaS.</p>
           </div>
         </div>
 
@@ -714,22 +719,24 @@
           
           <div class="timeline-item">
             <h4>Weeks 1–4</h4>
-            <p>NanoBot packaged in isolated scale-to-zero microVM cages. Integrate Claude models and curate 10 key chores.</p>
+            <p>Package NanoBot runtime on isolated scale-to-zero microVM environments. Establish Claude API routing. Curate 10 core skills.</p>
           </div>
           
           <div class="timeline-item">
             <h4>Weeks 5–8</h4>
-            <p>Implement conversational onboarding flow mapping persona to skills. Build smart ledger and Skill Shop UI.</p>
+            <p>Develop conversational onboarding matching personas to capabilities. Construct smart Ledger and plain-English Skill Marketplace.</p>
           </div>
           
           <div class="timeline-item">
             <h4>Weeks 9–12</h4>
-            <p>Beta test with existing NULLPOINT SMB clients. Transition episodic engineering projects to recurring $200/mo team plans.</p>
+            <p>Beta test with existing NULLPOINT SMB clients. Transition episodic engineering consulting projects to compounding $200/mo managed infrastructure plans.</p>
           </div>
         </div>
         
         <div class="timeline-note anim-el">
-          * Note: Idea B must fully ship secure VM infrastructure and marketplaces before generating first dollar. Concierge shortcuts are not viable.
+          <strong>Methodology Trade-offs:</strong>
+          <br>• Idea A allows a highly manual concierge wedge to validate matching rules instantly, pushing back the automated product build.
+          <br>• Idea B requires building container vm infrastructure upfront before first dollar, but establishes a highly automated, low-touch delivery system from day one.
         </div>
       </div>
     </div>
@@ -738,43 +745,43 @@
   <!-- SECTION 6: FOUNDER ADVANTAGES -->
   <section id="advantages">
     <div class="container animate-trigger">
-      <span class="section-label anim-el">05 / Capabilities</span>
-      <h2 class="display-medium anim-el">Founder-Specific Advantages</h2>
+      <span class="section-label anim-el">05 / Alignment</span>
+      <h2 class="display-medium anim-el">Founder Advantage Wedge</h2>
       
       <div class="table-wrapper anim-el">
         <table class="adv-table">
           <thead>
             <tr>
-              <th>Capability Wedge</th>
+              <th>Strategic Asset</th>
               <th class="th-a">Idea A / Hiring</th>
               <th class="th-b">Idea B / Agents</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Vanderbilt Campus Access</td>
-              <td class="adv-yes">Captive wedge (7k undergrads)</td>
+              <td>Vanderbilt Campus Wedge</td>
+              <td class="adv-yes">Captive beachhead access (Francesca)</td>
               <td class="adv-no">—</td>
             </tr>
             <tr>
-              <td>Francesca (Advisor Alignment)</td>
-              <td class="adv-yes">Warm employer introductions</td>
+              <td>NULLPOINT Client Pipeline</td>
               <td class="adv-no">—</td>
+              <td class="adv-yes">Warm B2B leads for managed services</td>
             </tr>
             <tr>
               <td>Noah's Technical Stack</td>
-              <td class="adv-yes">Agent matching state logic</td>
-              <td class="adv-yes">Isolated VM infrastructure expert</td>
+              <td class="adv-yes">Recruiting agent state logic</td>
+              <td class="adv-yes">DevOps containerization & VM expertise</td>
             </tr>
             <tr>
-              <td>NULLPOINT Client Network</td>
+              <td>Francesca (Advisory Leverage)</td>
+              <td class="adv-yes">Direct introductions to HR decision makers</td>
               <td class="adv-no">—</td>
-              <td class="adv-yes">Immediate distribution for B2B plans</td>
             </tr>
             <tr>
-              <td>Target Domain Knowledge</td>
-              <td class="adv-yes">Empathy for student placement</td>
-              <td class="adv-yes">Experience building automated client VM systems</td>
+              <td>Target Market Empathy</td>
+              <td class="adv-yes">Frederik's background as undergraduate job hunter</td>
+              <td class="adv-yes">Frederik & Noah's expertise building AI systems</td>
             </tr>
           </tbody>
         </table>
@@ -794,7 +801,7 @@
           <div class="path-num">01</div>
           <div class="path-content">
             <h3>Hiring Platform First</h3>
-            <p>Build the hiring venture as the core bet. The agent matching state engine developed becomes the foundation for a generalized managed platform later, leveraging a clear campus distribution wedge and high contract values.</p>
+            <p>Pursue a venture-backed path. Build candidate-employer agent architecture as the primary bet. The developed agent orchestration becomes the foundation for a generalized personal agent platform later once a strong network graph is established.</p>
           </div>
         </div>
 
@@ -803,7 +810,7 @@
           <div class="path-num">02</div>
           <div class="path-content">
             <h3>Agent Platform First</h3>
-            <p>Deploy as a productized NULLPOINT retainer service immediately. Higher speed to first cash flow, but operates against a narrowing competitive window and features a significantly lower long-term valuations ceiling.</p>
+            <p>Pursue a highly profitable bootstrapped service. Sell productized managed VM retainers to your existing SMB client network immediately, securing immediate cash flow and validating automated task delivery in a live market.</p>
           </div>
         </div>
 
@@ -812,7 +819,7 @@
           <div class="path-num">03</div>
           <div class="path-content">
             <h3>Both Simultaneously</h3>
-            <p>Run both projects concurrently to maintain options. Stretches a two-person team exceptionally thin and increases risk of neither achieving escape velocity.</p>
+            <p>Run both projects concurrently to maintain options, dividing effort between productized NULLPOINT retainers and the Vanderbilt student wedge, accepting the risk of stretched team capacity.</p>
           </div>
         </div>
       </div>
