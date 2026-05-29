@@ -1,282 +1,173 @@
 // NULLPOINT Venture assessment interactive engine
-// May 2026 - Confidential
+// Focus: Visuals-first, extremely punchy, no wordy AI blocks.
 
 // Data for the entire research assessment
 const assessmentData = {
   hero: {
     suits: {
-      title: "The Agent Duel",
-      subtitle: "A Comprehensive Venture Assessment",
-      meta: "Prepared for Frederik Schutz & Noah | May 2026",
-      desc: "An unbiased, multidimensional evaluation of two venture opportunities: The Hiring Platform vs. The Managed Agent Platform. Both represent technically viable paths for a two-person team, yet present starkly contrasting moats, financial profiles, and scaling potentials."
+      title: "Venture Scorecard",
+      subtitle: "The Hiring Platform vs. Managed Agents",
+      meta: "NULLPOINT ENGINEERING | CONFIDENTIAL DECISION MATRIX",
+      desc: "An executive, visuals-first comparison of Moats, Margins, Execution Speed, and Competitive Windows. Stop reading blocks of text. Look at the numbers."
     },
     caveman: {
-      title: "MAMMOTH TRAP vs MAGIC IN BOX",
-      subtitle: "BIG BRAIN FIGHT FOR NULLPOINT CAVE",
-      meta: "Noah and Frederik make campfire decision | Moon 5, Year 2026",
-      desc: "Frederik and Noah have two ways to catch shiny rocks. One way make big tribe, other way rent magic monkeys. Here is simple truth. No big papers, no fancy words. Just real cave facts."
+      title: "MAMMOTH vs MONKEY BOX",
+      subtitle: "ROCK FIGHT FOR CHEAP SHINY STONES",
+      meta: "Frederik and Noah choose weapon at fire | May 2026",
+      desc: "Do not read long letters. Big chiefs have no time. Look at how many bones we get, how fast we get them, and if wild beasts steal them."
     }
   },
   overview: {
     ideaA: {
       suits: {
         title: "Idea A: The Hiring Platform",
-        tagline: "Autonomous Agent-Driven Recruiting",
-        desc: "A two-sided professional network where candidates and employers each deploy autonomous AI agents that negotiate matches using public signals. Over time, this interaction builds a verified trust network, ultimately cannibalizing static resume directories like LinkedIn and Handshake.",
-        bullets: [
-          "Conversational onboarding that constructs a profile passively from public signals.",
-          "Dual-agent model where both sides are represented simultaneously in matching.",
-          "Builds a verified, high-trust peer professional graph over years.",
-          "Vanderbilt campus-first beachhead strategy bypassing enterprise sales cycles."
-        ]
+        tagline: "Autonomous Recruiting Network",
+        desc: "A matching system where candidates & employers both have AI agents negotiating deals using public data from day one, growing into a locked-in verified trust network."
       },
       caveman: {
-        title: "Mammoth Trap (Hiring Platform)",
+        title: "Mammoth Trap (Hiring)",
         tagline: "Smart Agent Hunt Hunter For Chief",
-        desc: "recruiting is broken. Resumes are pile of bad stones. LinkedIn is silly theater dance. Candidates throw fake letters in deep dark hole, Chiefs get drowned in trash. We send two magic spirits to do the work instead.",
-        bullets: [
-          "Hunter talk to magic mirror, mirror build profile from past hunts (GitHub, portfolio).",
-          "Candidate get hunter agent, Chief get chief agent. They talk in secret.",
-          "Find best match from public signals on day one.",
-          "Chief only look when agent find real fat mammoth. No cold apply spam."
-        ]
+        desc: "LinkedIn is bad cave dance. Resumes are pile of bad stones. Candidates send trash in dark hole. We let two magic spirits talk in secret and find the catch."
       }
     },
     ideaB: {
       suits: {
-        title: "Idea B: The Managed Agent Platform",
-        tagline: "Zero-DevOps Personal AI Container Hosting",
-        desc: "A managed hosting layer on top of lightweight frameworks like NanoBot that makes 24/7 personal agents accessible to non-technical users. Features conversational onboarding, automated persona-to-capability routing, and a plain-English skill marketplace.",
-        bullets: [
-          "Powered by NanoBot: 4k LOC, 20MB memory, sub-200ms cold starts.",
-          "One-click, conversation-driven backend container provisioning.",
-          "Plain-English skill marketplace (e.g., 'texts you three key items every morning').",
-          "Vertical focus leverages NULLPOINT's existing client network for distribution."
-        ]
+        title: "Idea B: Managed Agents",
+        tagline: "Zero-DevOps 24/7 Container Hosting",
+        desc: "A managed hosting and onboarding layer on top of NanoBot that makes 24/7 personal agents accessible to non-technical users via a plain-English skill shop."
       },
       caveman: {
         title: "Magic In Box (Managed Agents)",
-        tagline: "Rent Magic Monkeys To Lazy Cavemen",
-        desc: "Smart agents (NanoBot, Hermes) are strong but too hard to use. Normal cavemen cannot clone git caves, spin up docker boxes, or write api keys. We put smart monkey inside tiny box. One click, box open, monkey work for you 24/7.",
-        bullets: [
-          "User lands on web cave, texts number, or talks to mirror.",
-          "Claude god maps answers to skill kit automatically.",
-          "Spin up tiny container cage (microVM) on backend instantly.",
-          "Plain English Skill Shop: buy skills like 'read email, text Oog, alert danger'."
-        ]
+        tagline: "Rent Chores Monkeys to Lazy Cavemen",
+        desc: "Smart agents are too hard for Oog to run. We lock a smart monkey inside a tiny container box. One click, box open, monkey works 24/7 for shiny rocks."
       }
     }
   },
+  
+  // Dimensions with numerical scores to generate custom visual progress bars
   dimensions: [
     {
       id: "market-size",
       label: "Market Size & TAM",
       icon: "🌐",
+      scores: { a: 9.5, b: 6.0 }, // Scores out of 10
+      metricLabel: "Total Addressable Market",
       suits: {
-        a: "Huge ($700B+ recruiting market). LinkedIn is an $18B monster locked in the past. Handshake owns college hiring but is a passive, dumb index. White space is massive for a verified professional trust identity.",
-        b: "Vast workflow automation market, but consumer segment is highly fragmented. TAM is harder to size and depends entirely on which vertical niche is successfully captured.",
-        verdict: "Idea A has a massive, clearly defined global TAM; Idea B has a highly fragmented target market."
+        a: "Huge ($700B+ recruiting market). LinkedIn is an $18B monster using static data. Handshake has 18M students but zero agent matching. Open space.",
+        b: "Workflow automation is growing rapidly but highly fragmented. TAM depends heavily on vertical focus. Tougher to capture large wedges.",
+        verdict: "Idea A targets a massive, unified HR industry. Idea B targets a scattered SMB/consumer market."
       },
       caveman: {
-        a: "Hiring is BIG MOUNTAIN of gold ($700B). LinkedIn is fat, lazy mammoth with $17B shiny rocks. Handshake has 18M young hunters but just sits there like dumb stone. Wide open path to capture all young hunters.",
-        b: "Many caves need small chore monkeys, but hard to tell how many will pay. Market is wild jungle, must choose one narrow path (like real estate or freelance caves) to survive.",
-        verdict: "Idea A: Big mammoth. Idea B: Many tiny squirrels."
+        a: " recruiting market is BIG MOUNTAIN ($700B). LinkedIn is fat, lazy mammoth with $17B rocks. Handshake has 18M young hunters but just sits there.",
+        b: "Many caves need monkeys, but hard to tell who has shiny rocks. Must choose one narrow path to survive.",
+        verdict: "A = Catch big mammoth. B = Shoot many tiny birds."
       }
     },
     {
       id: "moat",
       label: "Moat & Defensibility",
       icon: "🛡️",
+      scores: { a: 9.0, b: 2.0 },
+      metricLabel: "Competitive Defensibility",
       suits: {
-        a: "Extremely strong. Every verified profile, successful match, and peer rating builds a compounding, proprietary 'trust graph' that cannot be scraped. Competitors like LinkedIn cannot copy due to the Innovator's Dilemma—auto-matching eats their search friction revenue.",
-        b: "Thin and highly vulnerable. The underlying tech (NanoBot, Claude, microVMs) is open source and easily copied. High risk of rapid commoditization as Apple, Google, and OpenAI build native consumer-agent setup experiences.",
-        verdict: "Idea A builds a compounding network moat; Idea B relies on ephemeral UI and onboarding advantages."
+        a: "Strong and compounding. Every verified profile and match creates a 'trust graph' of peer signals that cannot be copied. LinkedIn cannot compete because auto-matching cannibalizes 70% of their manual search revenue.",
+        b: "Thin and time-sensitive. Underlying tech (NanoBot, Claude, microVMs) is open source and easily copied. High threat of Apple/OpenAI native consumer agent setup experiences.",
+        verdict: "Idea A creates a compounding data network effect. Idea B has no technical lock-in."
       },
       caveman: {
-        a: "BIG STONE WALL. Verified trust graph is heavy stone, hard to steal. Big blue LinkedIn mammoth too fat to run. It makes rocks from slow search. If it does auto-matching, it eats own tail! We have years to build fort.",
-        b: "LOW FENCE. Any smart caveman can copy magic monkey (NanoBot). Big gods (Apple, Google, OpenAI) making free monkeys. If monkey does not have special data, users jump to next cave easily.",
-        verdict: "Idea A: Heavy stone fortress. Idea B: Shiny wooden tent."
+        a: "BIG STONE WALL. Verified trust graph is heavy stone, hard to steal. Big blue LinkedIn mammoth too fat to run. If it does auto-matching, it eats own tail!",
+        b: "LOW FENCE. Any caveman can copy magic monkey (NanoBot). Big gods (Apple/OpenAI) making free monkeys. If monkey doesn't have special data, users jump cave.",
+        verdict: "A = Stone fortress. B = Shiny wooden tent."
       }
     },
     {
       id: "economics",
       label: "Unit Economics",
       icon: "💰",
+      scores: { a: 9.5, b: 5.0 },
+      metricLabel: "Gross Profit Margin",
       suits: {
-        a: "Exceptional. High-margin placement fees ($7,000–$16,500 based on 10-15% salary) paid only on success. Eliminates upfront sales friction. Marginal COGS per user since matching is software-driven.",
-        b: "Precarious. A $200/mo B2B team plan is viable, but consumer plans ($20-25/mo) face extreme margin pressure. Power users running heavy workflows can generate API fuel costs that easily wipe out subscription revenues.",
-        verdict: "Idea A features high ticket value and 90%+ margins; Idea B is a tight margin game vulnerable to power users."
+        a: "Outstanding. High ticket value ($7,000–$16,500 per successful hire). Zero upfront sales friction—employers pay nothing until successfully matched. Low infra cost.",
+        b: "Precarious. B2B team plan ($200/mo) is viable, but consumer plans ($20/mo) face extreme margin pressure. Power users running constant workflows can generate API fuel costs exceeding subscription.",
+        verdict: "Idea A features high deal value & 90%+ margins. Idea B is a low-margin game vulnerable to power users."
       },
       caveman: {
-        a: "BIG MEAT PILE. Chief pay zero rocks until hunter actually catch mammoth. When hunter caught, Chief pay $10,000 in shiny rocks! Cost to run magic machine is tiny pebble. 95% profit margin on every catch.",
-        b: "SKINNY MEAT. B2B team plan ($200/mo) is nice fat fish. Consumer tier ($20/mo) is a trap! One power caveman run monkey all day, eat $15 in magic API wood fuel, kill profit margin. Dangerously thin.",
-        verdict: "Idea A: Hunt one mammoth, eat for moon. Idea B: Catch small flies, pay for oil."
+        a: "BIG MEAT. Chief pays zero rocks until hunter caught. When hunter caught, Chief pays $10,000 in shiny rocks! Cost to run magic machine is tiny pebble.",
+        b: "SKINNY FISH. B2B team plan ($200/mo) is nice. Consumer tier ($20/mo) is trap—one heavy caveman runs monkey all day, eats $15 in magic API wood fuel, kills profit.",
+        verdict: "A = Hunt one mammoth, eat for moon. B = Catch small flies."
       }
     },
     {
       id: "first-dollar",
       label: "Path to First Dollar",
       icon: "⚡",
+      scores: { a: 9.0, b: 3.0 },
+      metricLabel: "Execution Speed to Revenue",
       suits: {
-        a: "Immediate. The 'Wizard of Oz' approach works perfectly. Before building the product, founders can scrape public data, manually match Vanderbilt graduates to warm employers, and collect massive placement fees on day one.",
-        b: "Delayed. No manual shortcuts exist because the infrastructure is the product. The containerization, skill marketplace, billing systems, and agent orchestration must be fully built and secure before the first customer can buy.",
-        verdict: "Idea A can monetize in weeks via manual concierge; Idea B requires a complete, high-complexity build first."
+        a: "Immediate. Perfect for 'Wizard of Oz' concierge approach. Founders can manually scrape Vanderbilt portfolios, match students to employers, and collect cash in weeks before building code.",
+        b: "Delayed. No manual shortcuts exist because the infrastructure is the product. The microVM containerization, billing systems, and skill marketplace must be fully built before the first sale.",
+        verdict: "Idea A can monetize in weeks via manual service. Idea B requires months of heavy backend build."
       },
       caveman: {
-        a: "LIGHTNING FAST. No need build full magic machine to get shiny rocks. Founders match hunter and Chief by hand, whisper in ear, and collect placement fee immediately. Do 'Wizard of Oz' trick!",
-        b: "SLOW WALK. Cannot fake magic box. Must build container cage, skill shop, and routing wires first. If box has holes, monkey escape or burn cave. Months of building before first shiny rock.",
-        verdict: "Idea A: Trade meat tomorrow. Idea B: Build full water system before first sip."
+        a: "LIGHTNING FAST. No need build full magic machine to get shiny rocks. Founders match hunter and Chief by hand, whisper in ear, and collect placement fee.",
+        b: "SLOW WALK. Cannot fake magic box. Must build container cage, skill shop, and routing wires first. Months of building before first rock.",
+        verdict: "A = Trade meat tomorrow. B = Build entire water system before first sip."
       }
     },
     {
-      id: "go-to-market",
-      label: "Go-to-Market Strategy",
-      icon: "🎯",
+      id: "big-tech",
+      label: "Big Tech Threat Immunity",
+      icon: "🦖",
+      scores: { a: 8.0, b: 1.5 }, // High score = immune / safe, low score = highly vulnerable
+      metricLabel: "Resistance to Platform Risk",
       suits: {
-        a: "Dense, hyper-local wedge at Vanderbilt University. Leverage student network, career center feeds, and an advisor (Francesca) with direct employer access. High density makes network effects trigger early.",
-        b: "Leverage NULLPOINT's existing SMB client network. Position as a managed productized service, pivoting episodic $15k consulting into $200/mo recurring infrastructure. Narrower target but warm leads.",
-        verdict: "Idea A relies on a high-density campus wedge; Idea B scales through productizing existing agency clients."
+        a: "Highly immune. HR tech is structurally protected by trust, compliance, and human verification. Giants like Google/Apple will not build candidate-focused double agents or localized campus wedges.",
+        b: "Extremely vulnerable. Google, Apple, and OpenAI are building desktop/phone automation natively. A generic managed agent layer will be crushed once OS-native agents are free.",
+        verdict: "Idea A operates in a safe niche; Idea B is directly in the path of Apple/Google/OpenAI agent rollouts."
       },
       caveman: {
-        a: "VANDERBILT TRIBE. Launch in one dense camp. Young hunters and advisors (Francesca) are already there. Expand campus by campus. Both agents scan public tracks on day one, so we don't need both sides on platform first.",
-        b: "NULLPOINT CAMP. Sell to current friends of NULLPOINT cave. Pivot from 'build spear for $15k' (consulting) to 'rent spear-maker for $200/mo' (managed infra). Safe, but no viral wildfire.",
-        verdict: "Idea A: Wildfire in dense camp. Idea B: Renting tools to neighbors."
+        a: "SAFE FROM BEASTS. Big tech gods do not care about small campus student wedges. They cannot replicate local relationships and trusted references.",
+        b: "DINOSAUR FOOTPRINT. Big gods (Apple Intelligence, OpenAI Operator) are stomping. They are releasing free, fast monkeys natively. Our tiny container cage will get stepped on.",
+        verdict: "A = Safe cave in mountains. B = Flat tent in path of stomping dinosaurs."
       }
     },
     {
-      id: "risks",
-      label: "Primary Risks",
-      icon: "⚠️",
+      id: "ops-simplicity",
+      label: "Support Simplicity",
+      icon: "🔧",
+      scores: { a: 8.0, b: 2.0 }, // High score = low operational support burden
+      metricLabel: "Operational Scalability",
       suits: {
-        a: "Cold start network density; regulatory scrutiny (NYC Local Law 144 bias audits); potential employer concentration in early stages; credentials hallucination.",
-        b: "Prompt injection security exploits (violates 'Rule of Two' security for broad permission agents); extreme support burden from non-technical users; high churn; dependency on Anthropic's pricing.",
-        verdict: "Idea A's risks are operational and legal; Idea B faces critical structural security and support-scalability threats."
+        a: "Highly scalable. Human recruiters act as validators. Standard web app. Hallucination risks are strictly mitigated by checking matches manually before delivery.",
+        b: "Support nightmare. Non-technical users face non-deterministic agent failures (prompt injections, integration breakdowns). Generating enormous ticket volumes that scale linearly with users.",
+        verdict: "Idea A keeps operations simple with human-in-the-loop validation. Idea B requires 24/7 technical customer support."
       },
       caveman: {
-        a: "BAD SPIRITS. Need 1,000 hunters in cave first or no match. Big chief laws in NYC say no unfair magic. Agent might lie about qualifications and make Chief angry. But we keep human-in-the-loop.",
-        b: "FIRE HAZARD. Bad spirits trick monkey (Prompt Injection) to steal cave secrets. Claude API god might raise fuel tax. Non-technical cavemen scream and throw rocks when monkey acts weird.",
-        verdict: "Idea A: Hard to get first 1,000 hunters. Idea B: Monkey might burn down your cave."
-      }
-    },
-    {
-      id: "advantages",
-      label: "Founder Advantages",
-      icon: "✨",
-      suits: {
-        a: "Vanderbilt student access, Francesca's direct employer validation and door-opening capabilities, Frederik's target demographic empathy.",
-        b: "Noah's exceptional system systems expertise (microVMs, containerization, NanoBot runtime isolation, DevOps optimization).",
-        verdict: "Idea A leverages social capital and network access; Idea B leverages deep, world-class infra engineering."
-      },
-      caveman: {
-        a: "TRIBAL ADVANTAGE. Vanderbilt tribe in hand. Francesca open big Chief doors. Frederik understands struggling young hunter because he is one.",
-        b: "SPEAR MASTER. Noah is grand master of container cages. He can pack 1,000 monkeys in small cave for cheap. This is his domain.",
-        verdict: "Idea A: We know the Chiefs. Idea B: We are the best blacksmiths."
-      }
-    },
-    {
-      id: "ceiling",
-      label: "Exit Potential & Ceiling",
-      icon: "🚀",
-      suits: {
-        a: "Venture scale. Delaware C-Corp. High potential for acquisition by LinkedIn, Indeed, or Workday at $10-50M when trust graph matures, or a massive $1B+ path if it replaces the resume standard.",
-        b: "Lifestyle business or productized agency service. Hard to raise venture capital due to thin moat and high competition. Best suited for $1-5M ARR highly profitable bootstrapping.",
-        verdict: "Idea A is a high-risk, venture-scale rocket; Idea B is a robust, profitable bootstrapped vehicle."
-      },
-      caveman: {
-        a: "FLY TO THE SKY. Delaware C-Corp rocket. LinkedIn buy our cave for mountain of gold. Can grow to be biggest tribe in all lands, replacing paper resume pebbles forever.",
-        b: "COMFY CAVE. Great lifestyle business. Make good gold every moon. Buy nice meat. But no big sky-rocket exit. Good side-hustle inside NULLPOINT.",
-        verdict: "Idea A: Generational Empire. Idea B: Highly profitable blacksmith shop."
+        a: "NO HEADACHE. Simple web board. Human always makes final decision, so if magic spirit makes mistake, we catch it first. Low noise.",
+        b: "SCREAMING CAVEMEN. Non-technical cavemen scream and throw rocks when monkey breaks, deletes calendar, or sends wrong smoke signal. Noah must answer tickets all day.",
+        verdict: "A = Low maintenance trap. B = Angry monkeys crying in cages."
       }
     }
   ],
+  
   timeline: {
     ideaA: [
-      {
-        phase: "Weeks 1–4",
-        suits: {
-          title: "Build the Core Scraper & Agent",
-          desc: "Create conversational candidate onboarding using Claude API. Build public data agents scanning Vanderbilt career center feeds and portfolios. Deliver immediate value against public data on day one."
-        },
-        caveman: {
-          title: "Build Spear & Tracker",
-          desc: "Make candidate mirror tell stories. Build tracking agent that scans student tracks (GitHub, portfolios) and public mammoth trails (job feeds). Both sides get value immediately from public signals."
-        }
-      },
-      {
-        phase: "Weeks 5–8",
-        suits: {
-          title: "Wizard of Oz Concierge",
-          desc: "Manually matches Vanderbilt candidates to warm employer opportunities sourced via advisor Francesca. Hand-deliver match recommendations and collect first high-ticket placement fees."
-        },
-        caveman: {
-          title: "Wizard of Oz Trick",
-          desc: "Frederik and Noah match hunters to Chiefs by hand. Deliver matches in person. Take first big piles of shiny rocks ($10k per placement) to prove it works."
-        }
-      },
-      {
-        phase: "Weeks 9–12",
-        suits: {
-          title: "Build The Dashboard",
-          desc: "Develop self-service employer search dashboard, natural language search interface, automated references product. Solidify matching backend."
-        },
-        caveman: {
-          title: "Build Big Mirror Board",
-          desc: "Build self-service fire board for Chiefs. Let Chiefs search in plain English. Build automated reference-checker spirit. Stop matching by hand."
-        }
-      },
-      {
-        phase: "Months 3–6",
-        suits: {
-          title: "Scale Trust Graph & SaaS",
-          desc: "Integrate ATS platforms (Greenhouse, Ashby). Implement peer-to-peer trust signals and private ratings. Transition from transaction fees to recurring SaaS."
-        },
-        caveman: {
-          title: "Tribe Network & Moon Tax",
-          desc: "Hook up to external ATS caves. Build deep trust web of private peer reviews. Charge monthly subscription rocks instead of just placement tax."
-        }
-      }
+      { phase: "Wk 1-4", suits: "Build scraper + conversational onboarding mirror. Agent scans Vanderbilt feeds.", caveman: "Build spear. Make mirror tell stories. Scan trails." },
+      { phase: "Wk 5-8", suits: "Match candidates manually. Act as concierge recruiter. Take first $10k placement fee.", caveman: "Wizard of Oz: Match by hand. Eat big meat today." },
+      { phase: "Wk 9-12", suits: "Build self-serve employer dashboard, natural language search, automated references.", caveman: "Build fire board for Chiefs to search hunters." },
+      { phase: "Mo 3-6", suits: "Integrate ATS (Greenhouse). Scale trust graph network and transition to SaaS.", caveman: "Connect external caves. Charge moon tax." }
     ],
     ideaB: [
-      {
-        phase: "Weeks 1–4",
-        suits: {
-          title: "Containerization & Core API",
-          desc: "Package NanoBot on scale-to-zero microVMs (Fly.io/Firecracker). Build Claude model routing logic. Curate initial 10-15 core skills library."
-        },
-        caveman: {
-          title: "Build Monkey Cages",
-          desc: "Noah builds ultra-cheap container cages (microVMs) for NanoBot monkeys. Set up Claude routing paths. Teach monkeys 10 simple starter chores."
-        }
-      },
-      {
-        phase: "Weeks 5–8",
-        suits: {
-          title: "Onboarding Flow & UX",
-          desc: "Deploy conversational onboarding mapping persona to capabilities. Construct smart user dashboard, approval ledger, and Plain-English Skill Marketplace."
-        },
-        caveman: {
-          title: "Monkey Shop UI",
-          desc: "Make beautiful shop where users buy skills with one tap. Build smart dashboard showing monkey logs and approval buttons so monkey doesn't go wild."
-        }
-      },
-      {
-        phase: "Weeks 9–12",
-        suits: {
-          title: "Client Launch & Scaling",
-          desc: "Beta-test with existing NULLPOINT SMB clients. Transition episodic projects to managed agent retainers ($200/mo). Refine support channels."
-        },
-        caveman: {
-          title: "Rent to Neighbors",
-          desc: "Rent B2B team packages ($200/mo) to current NULLPOINT clients. Turn manual consulting into monthly recurring rent. Make steady shiny rocks."
-        }
-      }
+      { phase: "Wk 1-4", suits: "Package NanoBot on scale-to-zero microVM cages. Set up Claude routing. Curate 10 skills.", caveman: "Build monkey cages (microVMs). Teach 10 chores." },
+      { phase: "Wk 5-8", suits: "Deploy conversational onboarding mapping persona to capabilities. Build Skill Shop UI.", caveman: "Make nice Skill Shop where users tap to buy chores." },
+      { phase: "Wk 9-12", suits: "Beta-test with existing NULLPOINT SMB clients. Convert episodic consulting to $200/mo.", caveman: "Rent packages to current clients. Convert spear build to monthly rent." }
     ]
   }
 };
 
 // State variables
-let currentMode = 'suits'; // 'suits' or 'caveman'
-let activeTimeline = 'ideaA'; // 'ideaA' or 'ideaB'
+let currentMode = 'suits';
+let activeTimeline = 'ideaA';
 
 // DOM elements
 const modeToggleBtn = document.getElementById('mode-toggle-btn');
@@ -286,16 +177,6 @@ const heroSubtitle = document.getElementById('hero-subtitle');
 const heroMeta = document.getElementById('hero-meta');
 const heroDesc = document.getElementById('hero-desc');
 
-const cardATitle = document.getElementById('card-a-title');
-const cardATagline = document.getElementById('card-a-tagline');
-const cardADesc = document.getElementById('card-a-desc');
-const cardABullets = document.getElementById('card-a-bullets');
-
-const cardBTitle = document.getElementById('card-b-title');
-const cardBTagline = document.getElementById('card-b-tagline');
-const cardBDesc = document.getElementById('card-b-desc');
-const cardBBullets = document.getElementById('card-b-bullets');
-
 const matrixContainer = document.getElementById('matrix-container');
 
 const timelineTabA = document.getElementById('timeline-tab-a');
@@ -304,20 +185,19 @@ const timelineContainer = document.getElementById('timeline-container');
 
 const pollContainer = document.getElementById('poll-container');
 
-// Sound effects or slight haptic vibration feedback simulator
 function triggerInteraction() {
   if (navigator.vibrate) {
     navigator.vibrate(5);
   }
 }
 
-// Function to update the DOM based on active mode
+// Update the DOM based on active mode
 function updateContent() {
   triggerInteraction();
   
   const isSuits = currentMode === 'suits';
   
-  // Update toggle UI
+  // Toggle styling class
   if (isSuits) {
     modeToggleText.innerHTML = '💼 Suits Mode <span class="toggle-pill active">On</span>';
     document.body.classList.remove('caveman-active');
@@ -326,42 +206,17 @@ function updateContent() {
     document.body.classList.add('caveman-active');
   }
 
-  // Update Hero Section with a smooth fade
+  // Update Hero
   const heroText = assessmentData.hero[currentMode];
   heroTitle.textContent = heroText.title;
   heroSubtitle.textContent = heroText.subtitle;
   heroMeta.textContent = heroText.meta;
   heroDesc.textContent = heroText.desc;
 
-  // Update Core Cards
-  const cards = assessmentData.overview;
-  
-  cardATitle.textContent = cards.ideaA[currentMode].title;
-  cardATagline.textContent = cards.ideaA[currentMode].tagline;
-  cardADesc.textContent = cards.ideaA[currentMode].desc;
-  
-  cardABullets.innerHTML = '';
-  cards.ideaA[currentMode].bullets.forEach(bullet => {
-    const li = document.createElement('li');
-    li.textContent = bullet;
-    cardABullets.appendChild(li);
-  });
-
-  cardBTitle.textContent = cards.ideaB[currentMode].title;
-  cardBTagline.textContent = cards.ideaB[currentMode].tagline;
-  cardBDesc.textContent = cards.ideaB[currentMode].desc;
-
-  cardBBullets.innerHTML = '';
-  cards.ideaB[currentMode].bullets.forEach(bullet => {
-    const li = document.createElement('li');
-    li.textContent = bullet;
-    cardBBullets.appendChild(li);
-  });
-
-  // Render Matrix Rows
+  // Render Matrix Rows with graphical metrics
   renderMatrix();
 
-  // Render Timeline Section
+  // Render Timeline
   renderTimeline();
   
   // Render Voting Box
@@ -371,13 +226,41 @@ function updateContent() {
 // Toggle Mode
 function toggleMode() {
   currentMode = currentMode === 'suits' ? 'caveman' : 'suits';
-  
-  // Add transitioning class for a visual pop
   document.body.classList.add('mode-transitioning');
   setTimeout(() => {
     updateContent();
     document.body.classList.remove('mode-transitioning');
   }, 200);
+}
+
+// Generate the visual score bar or list of bones
+function generateVisualIndicator(score, type) {
+  const isSuits = currentMode === 'suits';
+  const max = 10;
+  const pct = Math.round((score / max) * 100);
+  
+  if (isSuits) {
+    const colorClass = score >= 8 ? 'good' : (score >= 5 ? 'avg' : 'bad');
+    return `
+      <div class="visual-score-container">
+        <div class="visual-score-bar ${colorClass}" style="width: ${pct}%"></div>
+        <span class="visual-score-text">${score.toFixed(1)}/10</span>
+      </div>
+    `;
+  } else {
+    // Caveman: Output bones 🦴 or fires 🔥
+    const count = Math.round(score / 2);
+    const symbol = type === 'ideaA' ? '🍖' : '🐒';
+    let output = '';
+    for(let i=0; i<5; i++) {
+      if (i < count) {
+        output += `<span class="cave-icon-active">${symbol}</span>`;
+      } else {
+        output += `<span class="cave-icon-inactive">☠️</span>`;
+      }
+    }
+    return `<div class="cave-rating-rack">${output} <small>(${score >= 8 ? 'FAT' : (score >= 5 ? 'OKAY' : 'WEAK')})</small></div>`;
+  }
 }
 
 // Render Matrix Rows
@@ -400,8 +283,22 @@ function renderMatrix() {
         <h4>${dim.label}</h4>
       </div>
       <div class="matrix-row-indicators">
-        <span class="indicator-badge ${dim.id}">${getShortIndicator(dim.id)}</span>
+        <span class="indicator-badge">${currentMode === 'suits' ? dim.metricLabel : 'CAVE SCORING'}</span>
         <span class="chevron">▼</span>
+      </div>
+    `;
+
+    // Visual side-by-side graphical rating bar
+    const visualRatingHeader = `
+      <div class="matrix-mini-chart">
+        <div class="mini-chart-row">
+          <span class="mini-label">${currentMode === 'suits' ? 'Idea A (Hiring)' : 'Mammoth Trap'}</span>
+          ${generateVisualIndicator(dim.scores.a, 'ideaA')}
+        </div>
+        <div class="mini-chart-row">
+          <span class="mini-label">${currentMode === 'suits' ? 'Idea B (Agents)' : 'Magic In Box'}</span>
+          ${generateVisualIndicator(dim.scores.b, 'ideaB')}
+        </div>
       </div>
     `;
 
@@ -409,6 +306,7 @@ function renderMatrix() {
     const rowContent = document.createElement('div');
     rowContent.className = 'matrix-row-content';
     rowContent.innerHTML = `
+      ${visualRatingHeader}
       <div class="matrix-comparison-grid">
         <div class="comparison-card idea-a-detail">
           <h5>${currentMode === 'suits' ? 'Idea A: The Hiring Platform' : 'Idea A: Mammoth Trap'}</h5>
@@ -420,14 +318,13 @@ function renderMatrix() {
         </div>
       </div>
       <div class="matrix-row-verdict">
-        <strong>${currentMode === 'suits' ? 'Direct Comparison' : 'Cave Verdict'}:</strong> ${dim[currentMode].verdict}
+        <strong>${currentMode === 'suits' ? 'Verdict' : 'Cave Verdict'}:</strong> ${dim[currentMode].verdict}
       </div>
     `;
 
     row.appendChild(rowHeader);
     row.appendChild(rowContent);
 
-    // Event listener for expanding/collapsing
     rowHeader.addEventListener('click', () => {
       row.classList.toggle('open');
       triggerInteraction();
@@ -437,27 +334,11 @@ function renderMatrix() {
   });
 }
 
-function getShortIndicator(id) {
-  const isSuits = currentMode === 'suits';
-  switch (id) {
-    case 'market-size': return isSuits ? "$700B+ TAM" : "🌲 Big Mountain";
-    case 'moat': return isSuits ? "Compounding Moat" : "🛡️ High Fortress";
-    case 'economics': return isSuits ? "90%+ Margin" : "🍖 Fat Mammoth";
-    case 'first-dollar': return isSuits ? "Weeks (Concierge)" : "⚡ Fast Spear";
-    case 'go-to-market': return isSuits ? "Vandy wedge" : "🎯 Vandy Camp";
-    case 'risks': return isSuits ? "Operational/Legal" : "🔥 Fire Hazard";
-    case 'advantages': return isSuits ? "Social + Technical" : "✨ Great Spear Maker";
-    case 'ceiling': return isSuits ? "Generational Exit" : "🚀 Sky Rocket";
-    default: return "";
-  }
-}
-
 // Render Timeline Progress
 function renderTimeline() {
   const steps = assessmentData.timeline[activeTimeline];
   timelineContainer.innerHTML = '';
 
-  // Tab highlights
   if (activeTimeline === 'ideaA') {
     timelineTabA.classList.add('active');
     timelineTabB.classList.remove('active');
@@ -473,8 +354,7 @@ function renderTimeline() {
 
     card.innerHTML = `
       <div class="timeline-badge">${step.phase}</div>
-      <h3>${step[currentMode].title}</h3>
-      <p>${step[currentMode].desc}</p>
+      <p class="timeline-desc">${currentMode === 'suits' ? step.suits : step.caveman}</p>
     `;
     timelineContainer.appendChild(card);
   });
@@ -485,9 +365,7 @@ const DEFAULT_POLL = { a: 12, b: 8 };
 
 function getPollData() {
   const data = localStorage.getItem('nullpoint_poll_votes');
-  if (data) {
-    return JSON.parse(data);
-  }
+  if (data) { return JSON.parse(data); }
   return DEFAULT_POLL;
 }
 
@@ -512,13 +390,13 @@ function renderPoll() {
   let headerHtml = '';
   if (isSuits) {
     headerHtml = `
-      <h3>NULLPOINT Founder Consensus Poll</h3>
-      <p class="poll-desc">Frederik and Noah, cast your initial vote. Which path aligns best with our current goals for NULLPOINT Engineering?</p>
+      <h3>NULLPOINT Consensus Ballot</h3>
+      <p class="poll-desc">Frederik & Noah, cast your initial vote. Which path matches our current priorities?</p>
     `;
   } else {
     headerHtml = `
-      <h3>TRIBAL COUNCIL BALLOT</h3>
-      <p class="poll-desc">Oog and Boog, throw rock at favorite side! Which path catch best meat and keep camp safe?</p>
+      <h3>TRIBAL ROCK THROW</h3>
+      <p class="poll-desc">Noah and Frederik: throw heavy rock at favorite cave direction!</p>
     `;
   }
 
@@ -547,7 +425,7 @@ function renderPoll() {
         </div>
         
         <button id="reset-vote-btn" class="secondary-btn">
-          ${isSuits ? 'Reset Vote & Re-cast' : 'Throw Another Rock'}
+          ${isSuits ? 'Reset Vote' : 'Reset Rock'}
         </button>
       </div>
     `;
@@ -575,7 +453,6 @@ function renderPoll() {
 
   pollContainer.innerHTML = headerHtml + bodyHtml;
 
-  // Set up reset button handler if visible
   const resetBtn = document.getElementById('reset-vote-btn');
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -601,12 +478,9 @@ timelineTabB.addEventListener('click', () => {
   renderTimeline();
 });
 
-// Expose global vote function for inline click handlers
 window.castVote = castVote;
 
-// Initial render
 document.addEventListener('DOMContentLoaded', () => {
-  // Pre-expand first dimension for demonstration
   setTimeout(() => {
     const firstRow = document.querySelector('.matrix-row');
     if (firstRow) {
