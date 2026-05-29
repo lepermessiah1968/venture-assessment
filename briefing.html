@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venture Assessment | Briefing Document</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- GSAP & ScrollTrigger from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    /* Premium Editorial Typography and Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* Global Variables */
+    :root {
+      --accent: #C17D2A;
+      --grey-light: #f3f4f6;
+      --grey-mid: #9ca3af;
+      --border: #e5e7eb;
+    }
+    
+    /* Layout Elements */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 160px 0;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    /* Typographic Hierarchy */
+    .display-large {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #111111;
+    }
+    
+    .display-medium {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #111111;
+      margin-bottom: 24px;
+    }
+    
+    .section-label {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 40px;
+      display: block;
+    }
+    
+    .body-lead {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--grey-mid);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    
+    .body-standard {
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+    
+    /* SECTION 1: OPENING */
+    #opening {
+      min-height: 100vh;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    #opening .display-large {
+      margin-bottom: 16px;
+    }
+    
+    /* SECTION 2: COMPARISON GRID */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 40px;
+    }
+    
+    .col-header {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #111111;
+      margin-bottom: 48px;
+    }
+    
+    .col-header.col-b {
+      border-bottom-color: var(--grey-mid);
+    }
+    
+    .comparison-row {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .row-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--grey-mid);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    
+    .row-value {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #111111;
+    }
+    
+    .row-value.accent-val {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* SECTION 3: THE MOAT */
+    .moat-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    
+    .moat-card {
+      border: 1px solid var(--border);
+      padding: 48px;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+      border-radius: 0;
+    }
+    
+    .moat-card.card-a {
+      border-color: #111111;
+    }
+    
+    .moat-card-label {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    
+    .card-a .moat-card-label { color: var(--accent); }
+    .card-b .moat-card-label { color: var(--grey-mid); }
+    
+    .moat-card p {
+      margin-bottom: 40px;
+    }
+    
+    .tag-rack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .outline-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+    }
+    
+    .outline-tag.amber-tag {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    .outline-tag.grey-tag {
+      color: var(--grey-mid);
+      border-color: var(--grey-mid);
+    }
+    
+    /* SECTION 4: THREAT VISUALIZATION */
+    .threat-wrapper {
+      margin: 80px 0;
+      position: relative;
+      width: 100%;
+    }
+    
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    
+    .scale-label {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .label-safe { color: var(--accent); }
+    .label-threatened { color: var(--grey-mid); }
+    
+    .scale-track {
+      position: relative;
+      height: 2px;
+      background: var(--border);
+      width: 100%;
+      margin: 32px 0 60px 0;
+    }
+    
+    .scale-dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+    
+    .scale-dot.dot-a {
+      left: 30%;
+      background: var(--accent);
+    }
+    
+    .scale-dot.dot-b {
+      left: 75%;
+      background: var(--grey-mid);
+    }
+    
+    .dot-caption {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    
+    .dot-a .dot-caption { color: var(--accent); }
+    .dot-b .dot-caption { color: #111111; }
+    
+    .threat-desc-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 40px;
+    }
+    
+    .threat-desc-group p {
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+    
+    /* SECTION 5: TIMELINE */
+    .timelines-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 20px;
+    }
+    
+    .timeline-col {
+      position: relative;
+      padding-left: 40px;
+      border-left: 1px solid var(--border);
+    }
+    
+    .timeline-col.col-a {
+      border-left-color: var(--accent);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 56px;
+    }
+    
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -46px;
+      top: 3px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--grey-mid);
+      z-index: 2;
+    }
+    
+    .col-a .timeline-item::before {
+      border-color: var(--accent);
+    }
+    
+    .timeline-item h4 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+      color: #111111;
+    }
+    
+    .col-a .timeline-item h4 {
+      color: var(--accent);
+    }
+    
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+    
+    .timeline-note {
+      grid-column: 2;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--grey-mid);
+      margin-top: -20px;
+    }
+    
+    /* SECTION 6: ALIGNMENT TABLE */
+    table.adv-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    table.adv-table th, table.adv-table td {
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    
+    table.adv-table th {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    table.adv-table th.th-a { color: var(--accent); }
+    table.adv-table th.th-b { color: var(--grey-mid); }
+    
+    .adv-yes {
+      color: #111111;
+      font-weight: 500;
+    }
+    
+    .adv-no {
+      color: var(--grey-mid);
+      opacity: 0.4;
+      font-weight: 400;
+    }
+    
+    /* SECTION 7: SEQUENCING */
+    .paths-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 20px;
+    }
+    
+    .path-block {
+      border: 1px solid var(--border);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    
+    .path-num {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    
+    .path-content h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    
+    .path-content p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+    
+    /* SECTION 8: CLOSING */
+    #closing {
+      min-height: 100vh;
+      border-bottom: none;
+      text-align: center;
+    }
+    
+    #closing .display-medium {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+    }
+    
+    /* Responsive Adaptations */
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+      
+      .container {
+        padding: 0 24px;
+      }
+      
+      .comparison-grid, .moat-cards, .threat-desc-group, .timelines-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .timeline-note {
+        grid-column: 1;
+        margin-top: 0;
+      }
+      
+      .path-block {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 30px;
+      }
+      
+      .moat-card {
+        min-height: auto;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1: OPENING -->
+  <section id="opening">
+    <div class="container animate-trigger">
+      <div class="display-large anim-el">Two ideas.<br>One decision.</div>
+      <div class="body-lead anim-el">This is everything you need to make it.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: NUMBERS AT A GLANCE -->
+  <section id="numbers">
+    <div class="container animate-trigger">
+      <span class="section-label anim-el">01 / Scorecard</span>
+      <h2 class="display-medium anim-el">The Numbers at a Glance</h2>
+      
+      <div class="comparison-grid">
+        <!-- Left Col: Hiring -->
+        <div class="grid-col anim-el">
+          <div class="col-header col-a">Idea A / Hiring Platform</div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Market Size</span>
+            <span class="row-value">$700B+ hiring market</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Path to first dollar</span>
+            <span class="row-value accent-val">Weeks (manual placements)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Revenue per transaction</span>
+            <span class="row-value accent-val">$7K–$16.5K per placement</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Gross margin</span>
+            <span class="row-value">90%+ on placements</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Moat</span>
+            <span class="row-value">Strong, compounding trust graph</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Competitive window</span>
+            <span class="row-value">Multi-year (LinkedIn can't compete)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Fundability</span>
+            <span class="row-value">High — pre-seed viable</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Long-term ceiling</span>
+            <span class="row-value">$1B+ (LinkedIn replacement)</span>
+          </div>
+        </div>
+        
+        <!-- Right Col: Agents -->
+        <div class="grid-col anim-el">
+          <div class="col-header col-b">Idea B / Agent Platform</div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Market Size</span>
+            <span class="row-value">Growing, hard to size</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Path to first dollar</span>
+            <span class="row-value">Months (full build first)</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Revenue per transaction</span>
+            <span class="row-value">$200/month team plan</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Gross margin</span>
+            <span class="row-value">46–68% depending on tier</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Moat</span>
+            <span class="row-value">Thin, open-source replicable</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Competitive window</span>
+            <span class="row-value">Narrowing fast</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Fundability</span>
+            <span class="row-value">Low — bootstrap only</span>
+          </div>
+          
+          <div class="comparison-row">
+            <span class="row-label">Long-term ceiling</span>
+            <span class="row-value">$1–5M ARR good business</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE MOAT EXPLAINED -->
+  <section id="moats">
+    <div class="container animate-trigger">
+      <span class="section-label anim-el">02 / Moat Assessment</span>
+      <h2 class="display-medium anim-el">Defensibility Models</h2>
+      
+      <div class="moat-cards">
+        <!-- Idea A Card -->
+        <div class="moat-card card-a anim-el">
+          <div>
+            <div class="moat-card-label">Compounding</div>
+            <p class="body-standard">Every verified profile, every placement, and every peer signal makes the dataset harder to replicate. Years of real human relationships cannot be scraped or bought overnight.</p>
+          </div>
+          <div class="tag-rack">
+            <span class="outline-tag amber-tag">Network effects</span>
+            <span class="outline-tag amber-tag">Data compounds</span>
+            <span class="outline-tag amber-tag">High switching cost</span>
+          </div>
+        </div>
+
+        <!-- Idea B Card -->
+        <div class="moat-card card-b anim-el">
+          <div>
+            <div class="moat-card-label">Replicable</div>
+            <p class="body-standard">The underlying tech stack—including NanoBot containers, Claude API integration, and Docker instances—is entirely open source. Any competent engineering team can copy this in weeks.</p>
+          </div>
+          <div class="tag-rack">
+            <span class="outline-tag grey-tag">No network effects</span>
+            <span class="outline-tag grey-tag">Low switching cost</span>
+            <span class="outline-tag grey-tag">Big tech closing gap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: COMPETITIVE THREAT -->
+  <section id="threats">
+    <div class="container animate-trigger">
+      <span class="section-label anim-el">03 / Market Risk</span>
+      <h2 class="display-medium anim-el">Platform Exposure</h2>
+      
+      <div class="threat-wrapper anim-el">
+        <div class="scale-labels">
+          <span class="scale-label label-safe">Safe</span>
+          <span class="scale-label label-threatened">Threatened</span>
+        </div>
+        <div class="scale-track">
+          <!-- Dot A -->
+          <div class="scale-dot dot-a">
+            <div class="dot-caption">Hiring Platform (30%)</div>
+          </div>
+          <!-- Dot B -->
+          <div class="scale-dot dot-b">
+            <div class="dot-caption">Agent Platform (75%)</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="threat-desc-group anim-el">
+        <p><strong>LinkedIn structurally cannot compete.</strong> Auto-matching profiles directly would cannibalize 70% of their manual Recruiter seat and InMail search friction revenues, leaving a wide multi-year window for a new trust standard.</p>
+        <p><strong>OS-Native agent saturation is imminent.</strong> Apple, Google, OpenAI, and Anthropic are all shipping native screen and task automation agents. The competitive window for generic wrapper sandboxes is closing rapidly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: BUILD TIMELINE -->
+  <section id="timelines">
+    <div class="container animate-trigger">
+      <span class="section-label anim-el">04 / Roadmaps</span>
+      <h2 class="display-medium anim-el">The Realistic Build Order</h2>
+      
+      <div class="timelines-grid">
+        <!-- Col A Timeline -->
+        <div class="timeline-col col-a anim-el">
+          <div class="col-header col-a">Idea A / Hiring Platform</div>
+          
+          <div class="timeline-item">
+            <h4>Weeks 1–4</h4>
+            <p>Both agents live on public data. Candidate profile mirrors scan portfolio signals. No users required on day one.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Weeks 5–8</h4>
+            <p>Manual concierge wedge. Founders manually match Vanderbilt students to warm employers. First placement fees collected.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Weeks 9–12</h4>
+            <p>Build basic employer search dashboard. Launch natural language query matching and automated reference checks.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Months 3–6</h4>
+            <p>ATS integrations (Greenhouse, Ashby). Solidify P2P trust graph database and begin subscription models.</p>
+          </div>
+        </div>
+
+        <!-- Col B Timeline -->
+        <div class="timeline-col col-b anim-el">
+          <div class="col-header col-b">Idea B / Agent Platform</div>
+          
+          <div class="timeline-item">
+            <h4>Weeks 1–4</h4>
+            <p>NanoBot packaged in isolated scale-to-zero microVM cages. Integrate Claude models and curate 10 key chores.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Weeks 5–8</h4>
+            <p>Implement conversational onboarding flow mapping persona to skills. Build smart ledger and Skill Shop UI.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h4>Weeks 9–12</h4>
+            <p>Beta test with existing NULLPOINT SMB clients. Transition episodic engineering projects to recurring $200/mo team plans.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-note anim-el">
+          * Note: Idea B must fully ship secure VM infrastructure and marketplaces before generating first dollar. Concierge shortcuts are not viable.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FOUNDER ADVANTAGES -->
+  <section id="advantages">
+    <div class="container animate-trigger">
+      <span class="section-label anim-el">05 / Capabilities</span>
+      <h2 class="display-medium anim-el">Founder-Specific Advantages</h2>
+      
+      <div class="table-wrapper anim-el">
+        <table class="adv-table">
+          <thead>
+            <tr>
+              <th>Capability Wedge</th>
+              <th class="th-a">Idea A / Hiring</th>
+              <th class="th-b">Idea B / Agents</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vanderbilt Campus Access</td>
+              <td class="adv-yes">Captive wedge (7k undergrads)</td>
+              <td class="adv-no">—</td>
+            </tr>
+            <tr>
+              <td>Francesca (Advisor Alignment)</td>
+              <td class="adv-yes">Warm employer introductions</td>
+              <td class="adv-no">—</td>
+            </tr>
+            <tr>
+              <td>Noah's Technical Stack</td>
+              <td class="adv-yes">Agent matching state logic</td>
+              <td class="adv-yes">Isolated VM infrastructure expert</td>
+            </tr>
+            <tr>
+              <td>NULLPOINT Client Network</td>
+              <td class="adv-no">—</td>
+              <td class="adv-yes">Immediate distribution for B2B plans</td>
+            </tr>
+            <tr>
+              <td>Target Domain Knowledge</td>
+              <td class="adv-yes">Empathy for student placement</td>
+              <td class="adv-yes">Experience building automated client VM systems</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: SEQUENCING OPTIONS -->
+  <section id="sequencing">
+    <div class="container animate-trigger">
+      <span class="section-label anim-el">06 / Strategic Paths</span>
+      <h2 class="display-medium anim-el">The Sequencing Question</h2>
+      
+      <div class="paths-stack">
+        <!-- Path 01 -->
+        <div class="path-block anim-el">
+          <div class="path-num">01</div>
+          <div class="path-content">
+            <h3>Hiring Platform First</h3>
+            <p>Build the hiring venture as the core bet. The agent matching state engine developed becomes the foundation for a generalized managed platform later, leveraging a clear campus distribution wedge and high contract values.</p>
+          </div>
+        </div>
+
+        <!-- Path 02 -->
+        <div class="path-block anim-el">
+          <div class="path-num">02</div>
+          <div class="path-content">
+            <h3>Agent Platform First</h3>
+            <p>Deploy as a productized NULLPOINT retainer service immediately. Higher speed to first cash flow, but operates against a narrowing competitive window and features a significantly lower long-term valuations ceiling.</p>
+          </div>
+        </div>
+
+        <!-- Path 03 -->
+        <div class="path-block anim-el">
+          <div class="path-num">03</div>
+          <div class="path-content">
+            <h3>Both Simultaneously</h3>
+            <p>Run both projects concurrently to maintain options. Stretches a two-person team exceptionally thin and increases risk of neither achieving escape velocity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: CLOSING FRAME -->
+  <section id="closing">
+    <div class="container animate-trigger">
+      <div class="display-medium anim-el">What kind of company<br>do you want to build?</div>
+      <div class="body-lead anim-el">Everything else follows from that answer.</div>
+    </div>
+  </section>
+
+  <!-- GSAP Animation Core -->
+  <script>
+    // Initialize ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      // Loop through each section trigger block
+      const sections = document.querySelectorAll(".animate-trigger");
+      
+      sections.forEach(sec => {
+        // Find animatable children in this specific section
+        const animElements = sec.querySelectorAll(".anim-el");
+        
+        gsap.fromTo(animElements, 
+          { 
+            y: 40, 
+            opacity: 0 
+          }, 
+          { 
+            y: 0, 
+            opacity: 1, 
+            duration: 0.8,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sec,
+              start: "top 80%", // Triggers when the top of section is 80% down the viewport
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+    });
+  </script>
+</body>
+</html>
