@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NULLPOINT | Venture Assessment Dashboard</title>
+  <meta name="description" content="Confidential Venture Assessment Dashboard. Evaluating Idea A (The Hiring Platform) vs. Idea B (The Managed Agent Platform) for NULLPOINT Engineering.">
+  
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+
+  <div class="container">
+    
+    <!-- Top Header & Navigation -->
+    <header class="glass">
+      <div class="logo">
+        NULLPOINT <span class="logo-tag">Venture Assessment</span>
+      </div>
+      
+      <!-- Interactive Slider Toggle -->
+      <div class="toggle-capsule" id="mode-toggle-btn" title="Toggle between Suits Mode and Caveman Mode">
+        <div class="toggle-text" id="mode-toggle-text">
+          💼 Suits Mode <span class="toggle-pill active">On</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dynamic Hero Header -->
+    <section class="hero">
+      <div class="hero-meta" id="hero-meta">Prepared for Frederik & Noah | May 2026</div>
+      <h1 id="hero-title">The Agent Duel</h1>
+      <p class="hero-subtitle" id="hero-subtitle">A Comprehensive Venture Assessment</p>
+      <p class="hero-desc" id="hero-desc">
+        Evaluating the core differences between Idea A (The Hiring Platform) and Idea B (The Managed Agent Platform).
+      </p>
+    </section>
+
+    <!-- Core Ideas Cards Grid -->
+    <section class="venture-grid">
+      
+      <!-- Card A: Hiring Platform -->
+      <div class="venture-card glass idea-a">
+        <div class="card-header">
+          <span class="venture-badge">Venture A</span>
+          <h2 id="card-a-title">Idea A: The Hiring Platform</h2>
+          <div class="tagline" id="card-a-tagline">Autonomous Recruiting Network</div>
+          <p id="card-a-desc">Evaluating the direct matching network.</p>
+        </div>
+        <ul class="venture-bullets" id="card-a-bullets">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+
+      <!-- Card B: Managed Agent Platform -->
+      <div class="venture-card glass idea-b">
+        <div class="card-header">
+          <span class="venture-badge">Venture B</span>
+          <h2 id="card-b-title">Idea B: Managed Agent Platform</h2>
+          <div class="tagline" id="card-b-tagline">DevOps-Free AI Containers</div>
+          <p id="card-b-desc">Evaluating the managed infrastructure runtime layer.</p>
+        </div>
+        <ul class="venture-bullets" id="card-b-bullets">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Interactive Comparison Matrix -->
+    <section class="matrix-section">
+      <div class="section-header">
+        <h2>Multi-Dimensional Analysis</h2>
+        <p>Click any category below to expand and compare details side-by-side.</p>
+      </div>
+      <div class="matrix-container" id="matrix-container">
+        <!-- Rows populated dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Timeline Roadmaps Section -->
+    <section class="timeline-section">
+      <div class="section-header">
+        <h2>Venture Roadmaps</h2>
+        <p>Toggle below to see the realistic build phases for each direction.</p>
+      </div>
+      
+      <!-- Timeline Switching Tabs -->
+      <div class="timeline-tabs">
+        <button class="tab-btn active" id="timeline-tab-a">The Hiring Platform</button>
+        <button class="tab-btn" id="timeline-tab-b">The Managed Agent Platform</button>
+      </div>
+
+      <div class="timeline-container" id="timeline-container">
+        <!-- Populated dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Founders Ballot Box -->
+    <section class="poll-section glass" id="poll-container">
+      <!-- Cast Vote UI populated dynamically by app.js -->
+    </section>
+
+    <!-- Professional Footer -->
+    <footer>
+      <div class="footer-logo">NULLPOINT Engineering</div>
+      <p>&copy; May 2026. Confidential Venture Assessment Dashboard. Prepared for Frederik Schutz & Noah.</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
